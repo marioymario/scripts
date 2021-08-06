@@ -8,13 +8,13 @@ import sys
 
 if len(sys.argv) !=2:
     print("USAGE:")
-    print("{} <your requested log file".format(sys.argv[0]))
+    print("{} <your requested log file>".format(sys.argv[0]))
     sys.exit()
 
 logfile =  sys.argv[1]
 with open(logfile) as f:
     for line in f:
-        pattern = r'^(\w+ [0-9] [0-9]+:[0-9]+:[0-9]+) [\w\.]+ [\w=]+\[([0-9]+)\]'
+        pattern = r'^(\w+ [0-9] [0-9]+:[0-9]+:[0-9]+) [\w\.]+ [\w=]+\[([0-9]+)\]' 
         result = re.search(pattern, line)
         if result is None:
             print(None)
